@@ -26,9 +26,8 @@ async def save_group(bot, message):
                 InlineKeyboardButton('Support', url=f'https://t.me/{SUPPORT_CHAT}')
             ]]
             reply_markup=InlineKeyboardMarkup(buttons)
-            k = await message.reply_photo(
-                photo="https://telegra.ph/file/903f1ca13c4fecc3bf4c9.jpg",
-                caption='<b>CHAT NOT ALLOWED 🐞\n\nMy admins has restricted me from working here ! If you want to know more about it contact support..</b>',
+            k = await message.reply(
+                text='<b>CHAT NOT ALLOWED 🐞\n\nMy admins has restricted me from working here ! If you want to know more about it contact support..</b>',
                 reply_markup=reply_markup,
             )
 
@@ -39,11 +38,14 @@ async def save_group(bot, message):
             await bot.leave_chat(message.chat.id)
             return
         buttons = [[
-                    InlineKeyboardButton('😜𝙷𝙴𝙻𝙿', callback_data='ghelp'),
+                    InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK),
+                    InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
+                 ],[
+                    InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="t.me/J_shree_ram")
                   ]]
         reply_markup=InlineKeyboardMarkup(buttons)
         await message.reply_text(
-            text=f"<b>ᴛʜᴀɴᴋ yᴏᴜ ꜰᴏʀ ᴀᴅᴅɪɴɢ ᴍᴇ ɪɴ {message.chat.title} ❣️\n\nɪꜰ ᴜ ʜᴀᴠᴇ ᴀɴy ᴅᴏᴜʙᴛꜱ ᴄʟɪᴄᴋ ᴛʜᴇ ʜᴇʟᴩ ʙᴜᴛᴛᴏɴ ᴀɴᴅ ᴄʜᴇᴄᴋ ʜᴏᴡ ᴛᴏ ᴜꜱᴇ ᴍᴇ 💝.</b>",
+            text=f"<b>Thankyou For Adding Me In {message.chat.title} ❣️\n\nIf you have any questions & doubts about using me contact support.</b>",
             reply_markup=reply_markup)
     else:
         settings = await get_settings(message.chat.id)
@@ -54,11 +56,15 @@ async def save_group(bot, message):
                         await (temp.MELCOW['welcome']).delete()
                     except:
                         pass
-                temp.MELCOW['welcome'] = await message.reply_text(
-                                                 text=(script.MELCOW_ENG.format(u.mention, message.chat.title)),
+                temp.MELCOW['welcome'] = await message.reply_video(
+                                                 video=(MELCOW_VID),
+                                                 caption=(script.MELCOW_ENG.format(u.mention, message.chat.title)),
                                                  reply_markup=InlineKeyboardMarkup(
                                                                          [[
-                                                                           InlineKeyboardButton('🤪𝚁𝚄𝙻𝙴𝚂', callback_data='rule')
+                                                                           InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url=GRP_LNK),
+                                                                           InlineKeyboardButton('Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ', url=CHNL_LNK)
+                                                                        ],[
+                                                                           InlineKeyboardButton("Bᴏᴛ Oᴡɴᴇʀ", url="t.me/J_shree_ram")
                                                                          ]]
                                                  ),
                                                  parse_mode=enums.ParseMode.HTML
@@ -83,12 +89,15 @@ async def leave_a_chat(bot, message):
         chat = chat
     try:
         buttons = [[
-            InlineKeyboardButton('Support', url=f'https://t.me/{SUPPORT_CHAT}')
+            InlineKeyboardButton('Support Group', url="https://t.me/+4nzja42ELQwzOWVl"),
+            InlineKeyboardButton('Owner', url="https://t.me/J_shree_ram")
+        ],[
+            InlineKeyboardButton('Use Me Here', url=f'https://t.me/{SUPPORT_CHAT}')
         ]]
         reply_markup=InlineKeyboardMarkup(buttons)
         await bot.send_message(
             chat_id=chat,
-            text='<b>Hello Friends, \nMy admin has told me to leave from group so i go! If you wanna add me again contact my support group.</b>',
+            text='<b>Hello Friends, \nMy admin has told me to leave from group, so i go! If you wanna add me again contact my Support Group or My Owner</b>',
             reply_markup=reply_markup,
         )
 
