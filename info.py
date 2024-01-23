@@ -53,10 +53,10 @@ CLONED_SESSIONS = []
 
 # Others
 VERIFY = bool(environ.get('VERIFY', False))
-SHORTLINK_URL = environ.get('SHORTLINK_URL', 'moneykamalo.com')
-SHORTLINK_API = environ.get('SHORTLINK_API', '8a04025f212aa7c29f79bb1c2ac28300e149a7e0')
-SECOND_SHORTLINK_URL = environ.get('SECOND_SHORTLINK_URL', 'moneykamalo.com')
-SECOND_SHORTLINK_API = environ.get('SECOND_SHORTLINK_API', '8a04025f212aa7c29f79bb1c2ac28300e149a7e0')
+SHORTLINK_URL = environ.get('SHORTLINK_URL', 'instantlinks.in')
+SHORTLINK_API = environ.get('SHORTLINK_API', 'dd4a036014ee347cdeee60d8f29d0559cac0443d')
+SECOND_SHORTLINK_URL = environ.get('SECOND_SHORTLINK_URL', 'instantlinks.in')
+SECOND_SHORTLINK_API = environ.get('SECOND_SHORTLINK_API', 'dd4a036014ee347cdeee60d8f29d0559cac0443d')
 IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', True))
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
 MAX_B_TN = environ.get("MAX_B_TN", "5")
